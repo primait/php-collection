@@ -1,15 +1,21 @@
 <?php
+
+declare(strict_types=1);
+
 # https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/doc/rules/index.rst
 
 $finder = PhpCsFixer\Finder::create()
-    ->in(['src', 'tests'])
+    ->in([
+        'src',
+        'tests'
+    ])
     ->exclude(['vendor'])
 ;
 
 return (new PhpCsFixer\Config())
     ->setRules([
         '@Symfony' => true,
-        '@PHP81Migration' => true,
+        '@PHP8x3Migration' => true,
         'blank_line_after_namespace' => true,
         'blank_line_after_opening_tag' => true,
         'blank_line_before_statement' => true,

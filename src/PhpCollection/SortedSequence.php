@@ -25,7 +25,7 @@ namespace PhpCollection;
  */
 class SortedSequence extends AbstractSequence
 {
-    private $sortFunc;
+    private \Closure $sortFunc;
 
     public function __construct(\Closure $sortFunc, array $elements = [])
     {

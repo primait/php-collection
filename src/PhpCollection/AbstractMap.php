@@ -27,7 +27,7 @@ use PhpOption\Some;
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-class AbstractMap extends AbstractCollection implements \IteratorAggregate, MapInterface
+class AbstractMap extends AbstractCollection implements MapInterface
 {
     protected array $elements;
 

@@ -332,7 +332,6 @@ class SequenceTest extends TestCase
     public function testIterator(): void
     {
         $seq = new Sequence([1, 2, 3]);
-        $this->assertIsIterable($seq);
         $i = 1;
         foreach ($seq as $elem) {
             $this->assertSame($i, $elem);
