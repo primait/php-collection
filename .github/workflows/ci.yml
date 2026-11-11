@@ -1,4 +1,4 @@
-name: "Test"
+name: "CI"
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
 jobs:
   test:
     name: Tests PHP ${{ matrix.php-versions }}
-    runs-on: [k8s-small]
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         php-versions: [ '8.2', '8.3', '8.4', '8.5' ]
@@ -45,7 +45,7 @@ jobs:
 
   phpstan:
     name: Static Analysis
-    runs-on: [k8s-small]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -75,7 +75,7 @@ jobs:
 
   cs-fixer:
     name: PHP CS Fixer
-    runs-on: [k8s-small]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v7
