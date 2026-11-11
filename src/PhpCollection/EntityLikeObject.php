@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace PhpCollection;
 
 /**
@@ -8,6 +10,8 @@ namespace PhpCollection;
  * Two objects are considered equal if they refer to the same instance.
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
+ *
+ * @phpstan-ignore trait.unused
  */
 trait EntityLikeObject
 {

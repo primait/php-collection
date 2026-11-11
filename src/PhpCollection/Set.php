@@ -21,7 +21,7 @@ class Set implements SetInterface
     public const ELEM_TYPE_OBJECT = 2;
     public const ELEM_TYPE_OBJECT_WITH_HANDLER = 3;
 
-    private $elementType;
+    private ?int $elementType = null;
 
     private array $elements = [];
     private int $elementCount = 0;
@@ -190,13 +190,17 @@ class Set implements SetInterface
             }
 
             return false;
-        } elseif (self::ELEM_TYPE_OBJECT_WITH_HANDLER === $this->elementType) {
+        }
+
+        if (self::ELEM_TYPE_OBJECT_WITH_HANDLER === $this->elementType) {
             if (is_object($searchedElement)) {
                 return $this->containsObjectWithHandler($searchedElement, ObjectBasicsHandlerRegistry::getHandler($searchedElement::class));
             }
 
             return false;
-        } elseif (self::ELEM_TYPE_SCALAR === $this->elementType) {
+        }
+
+        if (self::ELEM_TYPE_SCALAR === $this->elementType) {
             if (is_scalar($searchedElement)) {
                 return $this->containsScalar($searchedElement);
             }

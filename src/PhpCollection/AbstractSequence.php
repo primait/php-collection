@@ -31,7 +31,7 @@ use PhpOption\Some;
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-class AbstractSequence extends AbstractCollection implements \IteratorAggregate, SequenceInterface
+class AbstractSequence extends AbstractCollection implements SequenceInterface
 {
     protected array $elements;
 
